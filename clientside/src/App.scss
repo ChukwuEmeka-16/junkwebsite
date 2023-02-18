@@ -1,0 +1,363 @@
+$brown:#825F77;
+$lighter-brown:#BF7482;
+$brownish-orange:#dfa696;
+$orange:#FFC16B;
+$yellow: #F9F871;
+$black:#1d1c1d;
+$white:#FFFFFF;
+$grey:#777777;
+$green:#43655A;
+
+.link{
+    color: #1d1c1d !important;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+    text-decoration: none !important;
+   
+   font-family: sans-serif;
+ 
+}
+
+// Global classes to be used wih javascript
+
+.display-none{
+    display: none;
+}
+
+
+
+body{
+    color: $black;
+    background-color: $white;
+}
+
+.Homepage{
+
+    width: 100%;
+   .Homepage-header{
+    height: 50px;
+    background-color: $white;
+    padding: 30px 40px;
+    box-shadow: 0px 0px 20px $grey ;
+    .Homepage-header-nav{
+        display: flex;
+
+        .Homepage-header-nav-h1{
+            font-size: 40px;
+            flex: 1;
+            color: $black;
+            font-family: cursive;
+        }
+        button{
+            border: 0;
+          background: transparent;
+          font-weight: 200;
+           flex: .5;
+           margin-right: 15%;
+           
+        }
+    } 
+   }
+
+   // search bar
+  .Homepage-section-1{
+    margin-top: 10px;
+    width: 80%;
+    
+    margin: auto;
+    margin-top: 30px;
+    height: 50px;
+    padding: 20px;
+    text-align: center;
+    
+        input{
+          border: 1px solid;
+           height: 40px;
+           border-radius: 4px;
+           width: 300px;
+           text-align: center;
+           box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+        }
+        button{
+            width: 60px;
+            height: 25px;
+            border: 0;
+            background-color: transparent;
+        }
+  }
+
+  // whats new
+   
+
+  .Homepage-section-2{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+    height: 200px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    h1{
+        font-weight: 350;
+        padding: 10px 0px 30px 10px;
+    }
+
+    .Homepage-section-2-main{
+      overflow-x:scroll ;
+     display: flex;
+       
+        aside{ 
+         height: 140px;
+         min-width: 200px;
+         border: 1px solid black;
+         margin-right: 10px;
+        }
+        aside:hover{
+            box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+        }
+    }
+  }
+
+
+  // junkyard specials
+  .Homepage-section-3{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+    height: 200px;
+   overflow-y: hidden;
+    overflow-x: scroll;
+
+    h1{
+        font-weight: 350;
+        padding: 10px 0px 30px 10px;
+    }
+    .Homepage-section-3-main{
+        overflow-x:scroll ;
+       display: flex;
+         
+          aside{ 
+        margin-right: 10px;
+          height: 140px;
+          min-width: 200px;
+          border: 1px solid black;
+  
+          }
+          aside:hover{
+            box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+        }
+      }
+
+
+
+  }
+  
+   // drinks
+  .Homepage-section-4{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+    height: 200px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    h1{
+        font-weight: 350;
+        padding: 10px 0px 30px 10px;
+    }
+    .Homepage-section-4-main{
+        overflow-x:scroll ;
+       display: flex;
+         
+          aside{ 
+            margin-right: 10px;
+          height: 140px;
+          min-width: 200px;  
+          border: 1px solid black;
+  
+          }
+          aside:hover{
+            box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+        }
+      }
+  }
+
+
+
+
+
+  // footer
+  .Homepage-footer{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
+    height: 30px;
+    display: flex;
+    aside{
+        flex: 1;
+        margin-right: 10px;
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+
+.login-form{
+    display: flex ;
+    flex-direction: column;
+    border: 1px solid $black;
+    margin: auto;
+    max-width: 50%;
+   /* box-shadow: inset 0px 0px 10px #000000;*/
+   border-radius: 5px;
+   margin-top: 15vh;
+   box-shadow: 0px 0px 10px $grey,0px 0px 20px $grey;
+   padding: 8px;
+   padding-top: 25px;
+   height: auto;
+
+
+
+   div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+
+
+    input{
+        height: 30px;
+        border-width: 1px;
+        border-radius: 4px;
+        padding: 10px;
+        box-sizing: border-box;
+       font-size: 15px;
+    }
+    button{
+        width: 80%;
+        margin: auto;
+        height: 30px;
+        background-color: $green;
+        border: 0px;
+        color: white;
+    }
+    
+}
+
+
+}
+.forgot-password{
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+
+.signup-form{
+    display: flex ;
+    flex-direction: column;
+    border: 1px solid $black;
+    margin: auto;
+    max-width: 50%;
+   /* box-shadow: inset 0px 0px 10px #000000;*/
+   border-radius: 5px;
+   margin-top: 15vh;
+   box-shadow: 0px 0px 10px $grey,0px 0px 20px $grey;
+   padding: 8px;
+   padding-top: 25px;
+   height: auto;
+
+
+
+   div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+
+
+    input{
+        height: 30px;
+        border-width: 1px;
+        border-radius: 4px;
+        padding: 10px;
+        box-sizing: border-box;
+       font-size: 15px;
+    }
+    button{
+        width: 80%;
+        margin: auto;
+        height: 30px;
+        background-color: $green;
+        border: 0;
+        color: $white;
+    }
+    
+}
+
+}
+.have-account{
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+
+
+.drop-menu-container{
+    position: absolute;
+    height: 300px;
+    width: 35%;
+    left: 25%;
+    background-color: $white;
+    box-shadow: 0px 0px 10px $grey,0px 0px 20px $grey;
+    padding: 20px;
+    h2{
+     text-align: center;
+     height: 15%;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        li{
+            flex: 1;
+        }
+    }
+}
+
+
+/* responsiveness*/ 
+
+
+@media all and (max-width:757px){
+    .Homepage-header-nav-h1{
+       font-size: 30px !important; 
+       display: flex;
+       min-width: 200px;
+    }
+   
+}
+
+@media all and (min-width:900px){
+   .login-form{
+    width: 35%;
+    
+   }
+   .signup-form{
+    width: 35%;
+   }
+}

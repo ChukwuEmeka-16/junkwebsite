@@ -1,0 +1,87 @@
+  <nav className='main-navbar'>
+        <div>
+         
+        <h1>Eat Right</h1>
+        </div>
+        
+        <ul >
+            <li> <Link to='/'>Home</Link> </li>
+            <li> <Link to='/Login'>Login</Link>  </li>
+            <li> <Link to='/Signup' >SignUp</Link> </li>
+            <li> <Link to='/Aboutus' >About </Link> </li>
+           
+        </ul>
+
+  
+
+ <FontAwesomeIcon onClick={openBar}  type="button"  icon="bars" size='xl' style={iconstyle} className='menu-icon'/> 
+      </nav>
+
+
+    {/*sidebar code */}
+      <aside className='sidebar' ref={toggler}>
+      <header>
+       
+      <FontAwesomeIcon onClick={closeBar}  type="button"  icon="x" size='xl' style={crossIcon}/>
+      
+      <h1>Menu</h1>
+       
+      </header>
+      <main>
+          <ul>
+          <li> <Link  to='/'>Home</Link> </li>
+          <li> <Link to='/Login'>Login</Link>  </li> 
+          <li> <Link to='/Signup' >SignUp</Link> </li>
+          <li> <Link to='/Aboutus' >About </Link> </li>
+          <li> <Link to='/Contact' >Contact us </Link> </li>
+          </ul>
+        </main>
+      <footer>
+
+      <label>Community :</label><input type="text" placeholder='Enter your email' value={Email} onChange={(e)=>setEmail(e.target.value)} required/> 
+      
+      <button type='submit'>Sign up</button>
+      
+
+      </footer>
+    </aside>
+       {/*sidebar code ends here */}
+
+
+      <Routes>
+    <Route path='/'  element={ <Landing/> } />
+    <Route path='/Login'  element={ <Login/> } />
+    <Route path='/Signup'  element={ <Signup/> } />
+    <Route path='/Aboutus'  element={ <About/> } />
+    <Route  path='/Forgotten'  element={<ForgotPass/> } />
+     </Routes>
+   
+     
+
+         const [Email, setEmail] = useState('')
+      const toggler = useRef()
+  
+function openBar() {
+  toggler.current.classList.add('display-bar')
+} 
+
+
+function closeBar() {
+  toggler.current.classList.remove('display-bar')
+}
+
+    const iconstyle = {
+   
+      height:'35px',
+      width:'35px',
+      display:'none',
+   
+      
+    }
+    const crossIcon = {
+      color:'black',
+      position:'absolute',
+      top:27,
+      left:30
+    }
+     
