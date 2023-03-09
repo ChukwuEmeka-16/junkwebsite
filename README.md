@@ -1,4 +1,3 @@
-# Flexisaf portfolio site
+# Flexisaf ecommerce website
 
- site for tracking user assets
- totally awesome
+ site for ordering food and drinks 
