@@ -1,1 +1,1 @@
-SELECT * FROM portfolio.Dishes
+select * from portfolio.users

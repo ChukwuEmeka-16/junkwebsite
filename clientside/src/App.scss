@@ -6,7 +6,10 @@ $yellow: #F9F871;
 $black:#1d1c1d;
 $white:#FFFFFF;
 $grey:#777777;
-$green:#43655A;
+$green:#56a35e;
+$red:#a91a1a;
+$shadow: 0px 0px 20px $grey;
+$biggershadow:0px 0px 10px $grey,0px 0px 20px $grey;
 
 .link{
     color: #1d1c1d !important;
@@ -29,7 +32,9 @@ $green:#43655A;
     display: none;
 }
 
-
+a:visited{
+    color: #FFC16B;
+}
 
 body{
     color: $black;
@@ -41,17 +46,21 @@ body{
     width: 100%;
    .Homepage-header{
     height: 50px;
-    background-color: $white;
-    padding: 30px 40px;
-    box-shadow: 0px 0px 20px $grey ;
+    background-color: $green;
+    padding: 30px 30px;
+    box-shadow: $shadow ;
+    
     .Homepage-header-nav{
         display: flex;
 
         .Homepage-header-nav-h1{
             font-size: 40px;
             flex: 1;
-            color: $black;
-            font-family: cursive;
+            color: $white;
+            font-family: sans-serif;
+            font-weight: 400;
+            
+            
         }
         button{
             border: 0;
@@ -59,7 +68,8 @@ body{
           font-weight: 200;
            flex: .5;
            margin-right: 15%;
-           
+           color: $white;
+           font-size: 20px;
         }
     } 
    }
@@ -97,31 +107,24 @@ body{
   .Homepage-section-2{
     margin-top: 30px;
     padding: 20px;
-    background-color: $white;
+   
     box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
-    height: 200px;
+    height: 400px;
     overflow-y: hidden;
     overflow-x: scroll;
 
     h1{
+        color: $white;
         font-weight: 350;
         padding: 10px 0px 30px 10px;
     }
-
-    .Homepage-section-2-main{
-      overflow-x:scroll ;
-     display: flex;
-       
-        aside{ 
-         height: 140px;
-         min-width: 200px;
-         border: 1px solid black;
-         margin-right: 10px;
-        }
-        aside:hover{
-            box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
-        }
+    .newCards{
+        overflow-x:scroll ;
+        display: flex;
+      height: 340px;
+      padding: 10px;
     }
+    
   }
 
 
@@ -129,31 +132,23 @@ body{
   .Homepage-section-3{
     margin-top: 30px;
     padding: 20px;
-    background-color: $white;
+    
     box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
-    height: 200px;
+    height: 400px;
    overflow-y: hidden;
     overflow-x: scroll;
 
     h1{
         font-weight: 350;
         padding: 10px 0px 30px 10px;
+        color: $white;
     }
-    .Homepage-section-3-main{
+    .specialsCards{
         overflow-x:scroll ;
-       display: flex;
-         
-          aside{ 
-        margin-right: 10px;
-          height: 140px;
-          min-width: 200px;
-          border: 1px solid black;
-  
-          }
-          aside:hover{
-            box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
-        }
-      }
+        display: flex;
+      height: 340px;
+      padding: 10px;
+    }
 
 
 
@@ -163,31 +158,32 @@ body{
   .Homepage-section-4{
     margin-top: 30px;
     padding: 20px;
-    background-color: $white;
+   
     box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
-    height: 200px;
+    height: 400px;
     overflow-y: hidden;
     overflow-x: scroll;
-
+    
     h1{
         font-weight: 350;
         padding: 10px 0px 30px 10px;
+        color: $white;
     }
-    .Homepage-section-4-main{
+    .drinkCards{
         overflow-x:scroll ;
-       display: flex;
-         
-          aside{ 
-            margin-right: 10px;
-          height: 140px;
-          min-width: 200px;  
-          border: 1px solid black;
-  
-          }
-          aside:hover{
-            box-shadow: 0px 0px 5px $grey,0px 0px 10px $grey;
-        }
-      }
+        display: flex;
+      height: 340px;
+      padding: 10px;
+    }
+
+   
+    
+
+
+
+
+
+
   }
 
 
@@ -222,7 +218,7 @@ body{
     flex-direction: column;
     border: 1px solid $black;
     margin: auto;
-    max-width: 50%;
+    max-width: 65%;
    /* box-shadow: inset 0px 0px 10px #000000;*/
    border-radius: 5px;
    margin-top: 15vh;
@@ -230,7 +226,7 @@ body{
    padding: 8px;
    padding-top: 25px;
    height: auto;
-
+   background-color: $white;
 
 
    div{
@@ -239,23 +235,34 @@ body{
     margin-bottom: 25px;
 
 
-    input{
+    .input{
         height: 30px;
         border-width: 1px;
-        border-radius: 4px;
+        width: 90%;
         padding: 10px;
         box-sizing: border-box;
        font-size: 15px;
+       border-top: 0;
+       border-left: 0;
+       border-right: 0;
+       margin: auto;
     }
+    
     button{
-        width: 80%;
+        width: 50%;
         margin: auto;
         height: 30px;
         background-color: $green;
         border: 0px;
         color: white;
+        border-radius: 4px;
     }
-    
+    input[type = checkbox]{
+       
+         position: absolute;
+        transform: translate(150px,5px);
+
+    }
 }
 
 
@@ -263,6 +270,7 @@ body{
 .forgot-password{
     text-align: center;
     margin-top: 60px;
+    
 }
 
 
@@ -272,7 +280,7 @@ body{
     flex-direction: column;
     border: 1px solid $black;
     margin: auto;
-    max-width: 50%;
+    max-width: 65%;
    /* box-shadow: inset 0px 0px 10px #000000;*/
    border-radius: 5px;
    margin-top: 15vh;
@@ -280,8 +288,8 @@ body{
    padding: 8px;
    padding-top: 25px;
    height: auto;
-
-
+   background-color: $white;
+   
 
    div{
     display: flex;
@@ -290,12 +298,17 @@ body{
 
 
     input{
+        width: 90%;
         height: 30px;
         border-width: 1px;
-        border-radius: 4px;
+        
         padding: 10px;
         box-sizing: border-box;
        font-size: 15px;
+       border-top: 0;
+       border-left: 0;
+       border-right: 0;
+       margin: auto;
     }
     button{
         width: 80%;
@@ -304,7 +317,14 @@ body{
         background-color: $green;
         border: 0;
         color: $white;
+        border-radius: 4px;
     }
+    input[type = checkbox]{
+       height: 20px;
+        position: absolute;
+       transform: translate(-10px,5px);
+
+   }
     
 }
 
@@ -312,6 +332,7 @@ body{
 .have-account{
     margin-top: 60px;
     text-align: center;
+    color: $white;
 }
 
 
@@ -325,6 +346,7 @@ body{
     background-color: $white;
     box-shadow: 0px 0px 10px $grey,0px 0px 20px $grey;
     padding: 20px;
+    border-radius: 18px;
     h2{
      text-align: center;
      height: 15%;
@@ -337,7 +359,294 @@ body{
             flex: 1;
         }
     }
+    button{
+        border: 0;
+        background-color: $red;
+        color: $white;
+        height: 30px;
+        width: 70px;
+        border-radius: 4px;
+    }
 }
+
+
+.itemCard{
+   border-radius: 8px;
+    min-width: 50%;
+    max-width: 70%;
+   height: 300px;
+   box-shadow: $biggershadow;
+    margin-right: 20px;
+   padding: 5px;
+   background-color: $white;
+
+    .itemImage{
+        border-radius: 25px;
+        width: 90%;
+        padding:0px 10px;
+        height: 150px;
+        
+    }
+   
+
+
+      
+
+    .itemName{
+        padding-top: 40px;
+       text-align: center;
+       margin-bottom: 20px;
+    }
+    .itemPrice{
+       text-align: center; 
+    }
+
+}
+
+.modal{
+   
+    height: 400px;
+    box-shadow: $shadow;
+   background-color: $white;
+    padding: 15px;
+    box-sizing: border-box;
+    position: fixed;
+    align-items: center;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    z-index: 9999;
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   transform: translateY(0px);
+     transition: all 1s ease;
+ 
+
+   .modalContent{
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    section{
+       flex: 1;  
+       button{
+        background-color: $green;
+        color: $white;
+        height: 40px;
+        width: 50%;
+        border: 0;
+        border-radius: 8px;
+       }
+    }
+   }
+   section:nth-child(3){
+   
+    display: flex;
+     margin: auto;
+     aside:nth-child(2){
+        margin-left: 60px;
+        margin-right: 60px;
+        font-size: 30px;
+     }
+   }
+
+
+
+}
+
+
+
+.bg-image{
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(20%);
+    z-index: -39;
+  
+}
+
+
+// cart
+.cartContainer{
+   padding: 20px;
+display: flex;
+height: 100vh;
+ flex-wrap: wrap;
+justify-content: center;
+
+ .cartItem{
+    height: 300px;
+    min-width: 35%;
+    max-width: 39%;
+   
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+     border-radius: 7px;   
+     margin-right: 20px;
+     margin-bottom: 20px;
+   
+      section:nth-child(1){
+       height: 50%;
+       margin-bottom: 10px;
+            img{
+               height: 100%;
+               width: 100%;
+               border-radius: 7px;
+   
+            }
+           
+      }
+   
+      section:nth-child(2){
+       text-align: center;
+       margin-bottom: 10px;
+      }
+      section:nth-child(3){
+       text-align: center;
+       margin-bottom: 10px;
+      }
+      section:nth-child(4){
+       display: flex;
+       margin-top: 20px;
+          button{
+           width: 35% !important;
+            border-radius: 4px;
+           border: 0;
+           height: 20px;
+          }
+           button:nth-child(1){
+               margin-left: 5%;
+               background-color: $green;
+               color: $white;
+               margin-right: 20%;
+          }
+          button:nth-child(2){
+           background-color: $red;
+           color: $white;
+      }
+      }
+   
+   }
+   
+ 
+}
+
+.Order-container{
+    background-color: $black;
+    height: 100vh;
+   color: $grey;
+
+    .Order-form-container{
+     margin-top: 20%;
+     background-color: $white;
+     height: auto;
+     min-height: 50%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 18px;
+
+    div > h1{
+        text-align: center;
+        font-weight: 400;
+        color: $black;
+    }
+        
+    .Card-body > div >input[type = text]{
+       display: flex;
+       flex-direction: column;
+       
+    }
+     .Card-body{
+
+      margin-top: 20px;
+        width: 100%;
+        div{
+            margin-bottom: 20px;
+        }
+        input{
+            height: 30px;
+            border: .5px solid grey ;
+            border-radius: 4px;
+            text-align: center;
+            
+        }
+    .CardNumber-container{
+
+        input{
+            margin-top: 10px;
+            width: 80%;
+            font-size: 17px;
+            letter-spacing: .5px;
+        }
+    }
+    .CardName-container{
+
+        input{
+            margin-top: 10px;
+            width: 80%;
+            font-size: 17px;
+            letter-spacing: .5px;
+        }
+    }
+    .CardExpdateCvv-container{
+     display: flex;
+
+     .expdate-container{
+        display:  flex;
+        flex-direction: column;
+        margin-right: 20px;
+     }
+     .cvv-container{
+        display: flex;
+        flex-direction: column;
+     }
+
+
+    }
+
+    .CardPayNow-container{
+
+        button{
+            height: 30px;
+            width: 80%;
+            border: 0;
+            background-color: $green;
+            color: $white;
+            border-radius: 4px;
+            margin-left: 25px;
+
+        }
+      }
+
+
+    }
+   
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* responsiveness*/ 
@@ -352,12 +661,45 @@ body{
    
 }
 
-@media all and (min-width:900px){
+@media all and (min-width:850px){
    .login-form{
-    width: 35%;
+    max-width: 40%;
     
    }
    .signup-form{
-    width: 35%;
+    width: 40%;
+    
+    div {
+        input[type = checkbox]{
+        height: 20px;
+         position: absolute;
+        transform: translate(-450px,5px);
+ 
+    }}
    }
+}
+@media all and (min-width:600px){
+
+    .itemCard{
+        max-width: 30%;
+        min-width: 20%;
+        
+    }
+    .cartContainer{
+        .cartItem{
+        max-width: 21%;
+        min-width: 27%;
+        
+    }}
+}
+
+@media all and (max-width:600px){
+    .drop-menu-container{
+        width: 60%;
+        left: 15%;
+    }
+}
+
+.translate{
+    transform: translateY(450px);
 }

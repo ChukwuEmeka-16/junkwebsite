@@ -6,7 +6,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import { updateEmail } from '../store/signupSlice';
 import { updatePass } from '../store/signupSlice';
 import { updateName } from '../store/signupSlice';
-
+import food from './food.jpeg'
 
 const Signup = () => {
   const dispatch = useDispatch()
@@ -41,7 +41,7 @@ const postData = async(e)=>{
    
   return (
     <>
-      
+      <img src={food} className="bg-image" />
       <form className='signup-form' onSubmit={(e)=>postData(e)}  >
       <h1 style={{margin:'auto'}}>SIGN UP</h1>
       <div>
@@ -59,6 +59,7 @@ const postData = async(e)=>{
       </div>
      
      <div className=' '>
+      <label htmlFor="">hide password</label>
      <input onClick={toggle} type="checkbox" className='' /> 
      </div>
       <div className=''>
@@ -69,7 +70,7 @@ const postData = async(e)=>{
 
 
       <div className='have-account'>
-        <p> Already have an account? <Link to='/Login'> Login</Link></p>
+        <p > Already have an account? <Link to='/Login'> Login</Link></p>
       </div>
     </>
   )

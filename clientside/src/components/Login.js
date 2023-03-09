@@ -5,7 +5,7 @@ import useToggleHook from './useToggleHook'
 import {useSelector, useDispatch} from 'react-redux'
 import { updateEmail } from '../store/loginSlice';
 import { updatePass } from '../store/loginSlice';
-
+import food from './food.jpeg'
 
 const Login = () => {
   // email and pass state variable
@@ -28,7 +28,7 @@ const data ={
 
   const{ passToggler,toggle}  = useToggleHook()
 
-  // let authUserName =''
+  
 
 
   async  function login(e) {
@@ -52,28 +52,30 @@ const data ={
    // console.log('authUserName');
   return (
     <>
+    <img src={food} className="bg-image" />
       <form className='login-form' onSubmit={(e)=>login(e)}>
       <h1 style={{margin:'auto'}}>LOG IN</h1>
         <div >
             <label htmlFor="">Email :</label>
-            <input onChange={(e)=>dispatch( updateEmail(e.target.value) )} type="email" className='' required />
+            <input onChange={(e)=>dispatch( updateEmail(e.target.value) )} type="email" className='input' required />
         </div>
 
         <div>
             <label htmlFor=""> Password :</label>
-            <input onChange={(e)=>dispatch( updatePass(e.target.value) )} ref={passToggler} type="text" className='' required />
-        </div>
-        <div className='check-field'>
-         <label htmlFor="">hide password</label><input  onClick={toggle} type="checkbox" className='' /> 
+            <input onChange={(e)=>dispatch( updatePass(e.target.value) )} ref={passToggler} type="text" className='input' required />
         </div>
 
+        <div id='check'>
+         <label htmlFor="">hide password</label><input  onClick={toggle} type="checkbox"  /> 
+        </div>
+       
         <div className=''> 
-            <button className=' ' >Log in</button> 
+            <button className='' >Log in</button> 
         </div>
         
       </form>
       <div  className='forgot-password'>
-      <Link  style={{color:'black'}} to='/Forgotten'> forgot password? click here</Link>
+      <Link   to='/Forgotten'> forgot password? click here</Link>
       </div>
      
       

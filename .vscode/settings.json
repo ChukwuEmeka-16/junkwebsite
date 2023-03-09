@@ -9,7 +9,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "firstConn",
-            "database": "informedTraders",
+            "database": "portfolio",
             "username": "Eli",
             "password": "smallPIP$"
         }

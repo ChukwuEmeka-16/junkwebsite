@@ -85,3 +85,19 @@ function closeBar() {
       left:30
     }
      
+
+     height: 400px;
+    box-shadow: $shadow;
+   background-color: $white;
+    padding: 15px;
+    box-sizing: border-box;
+    position: fixed;
+    align-items: center;
+    bottom: 0 !important;
+    left: 10%;
+    right: 10%;
+    z-index: 9999;
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+    // transition: all 2s ease;
+ transform: translateY(50px);

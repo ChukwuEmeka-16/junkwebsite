@@ -1,21 +1,20 @@
 const express = require("express");
 const cors = require( "cors");
 const bodyParser =  require("body-parser");
-//const session = require("express-session")
+
 const {createPool} = require('mysql');
 const jwt = require('jsonwebtoken')
 const random = require('randomstring')
 const app = express()
+
 require('dotenv').config()
-//const stripe = require('stripe')(process.env.STRIPE_KEY)
 
 
 // middlewares
 app.use(cors())
-
-
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
+
 
 
 const pool = createPool({
@@ -23,47 +22,7 @@ const pool = createPool({
     user:"Eli",
     password:"smallPIP$"
 })
-/*app.use(session({
 
-    secret:'mykey',
-    resave:false,
-    saveUninitialized:false
-}))*/
-
-
-
-// global variables
-
-//let signed = false
-
-
-// routing here
-/*app.get("/Community",(req,res)=>{
-    res.send("hello")
-   const sql = 'SELECT * FROM users where name = ? '
-   const name = "eli"
-   pool.query(sql,[name],(err,result)=>{
-     if (err) {
-        
-     }
-   })
-})*/
-
-
-/*app.post("/Community",(req,res)=>{
-
-    //res.send("awesome inded")
-    const mail = req.body.email
-    const sql = "insert into portfolio.Community_users(email) VALUES(?)"
-    pool.query(sql,[mail],(err,result)=>{
-        if (err) {
-           res.send(false)
-
-        }else{
-        res.send(true)}
-    })
- 
-})*/
 
 
 
@@ -95,7 +54,10 @@ app.post("/Login",(req,res)=>{
     let  email = req.body.email
     let pass = req.body.password
     
+    
     pool.query(sql,[email,pass],(err,result)=>{
+        
+        
         if(err){
             res.json({success:false,message:"error, try again later"})// this is saying the response body  should be parsed as json and return a javascript object
          
@@ -110,14 +72,118 @@ app.post("/Login",(req,res)=>{
        } else {
        res.json({success:false,message:"user with this Email and password combination not found"})
       
+
+       }
        
     
-       }
+       
     })
    
 })
 
+/*app.post('/Drinks',upload.single("drinkImage"),(req,res)=>{
+
+  let name = req.body.name
+  let price = req.body.price
+  let image = req.file.buffer.toString('base64')
+  let sql = "insert into portfolio.Drinks (name,price,images) values(?,?,?) "
+ 
+  pool.query(sql,[name,price,image],(err,result)=>{
+     if (err) throw err
+  
+  })
+})
+*/
 
 
+app.get('/Drinks',(req,res)=>{
+ let sql = 'select * from portfolio.Drinks' 
+pool.query(sql,(err,result)=>{
+    if(err) throw err
+    else{
+        res.send(result)
+    }
+})
+    
+
+})
+
+
+app.get('/Specials',(req,res)=>{
+    let sql = 'select * from portfolio.Dishes' 
+    pool.query(sql,(err,result)=>{
+        if(err) throw err
+        else{
+           let response = JSON.stringify(result)
+          
+           res.send(response)
+        }
+
+    })
+})
+
+app.get('/New',(req,res)=>{
+    let sql = 'select * from portfolio.whatsNew' 
+    pool.query(sql,(err,result)=>{
+        if(err) throw err
+        else{
+           let response = JSON.stringify(result)
+          
+           res.send(response)
+        }
+
+    })
+    
+})
+
+app.post('/Cart',(req,res)=>{
+  let name = req.body.itemname
+  let price = req.body.itemprice
+  let image = req.body.itemimage
+  let quantity = req.body.quantity 
+
+ 
+  let sql = 'insert into portfolio.Cart(name,price,image,quantity) VALUES(?,?,?,?)'
+
+  pool.query(sql,[name,price,image,quantity],(err,result)=>{
+
+    if(err) throw err
+        else{
+           
+          
+           res.sendStatus(200)
+        }
+  })
+})
+
+app.get('/Cart',(req,res)=>{
+    let sql = 'select * from portfolio.Cart'
+    pool.query(sql,(err ,result)=>{
+        if(err) throw err
+        else{
+           
+          
+           res.send(result)
+        }
+    })
+})
+
+app.put('/Cart',(req,res)=>{
+    let image = req.body.img
+    
+   let sql = 'delete from portfolio.Cart where image = ?'
+   pool.query(sql,[image],(err,result)=>{
+    if(err) throw err
+        else{
+           
+          
+           res.send(true)
+        }
+   })
+}) 
+
+app.get('/Profile',(req,res)=>{
+   let sql = 'select * from portfolio.users'
+})
 
 app.listen(6007,(()=>console.log("running")))
